@@ -1,7 +1,8 @@
 import streamlit as st
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.chat_models import ChatOpenAI
 from langchain.vectorstores import FAISS
 
 st.set_page_config(page_title="Chatbot scolastico", page_icon="📚")
@@ -31,3 +32,4 @@ if query:
         f"Rispondi alla domanda basandoti solo su questo documento:\n\n{docs_retrieved}\n\nDomanda: {query}"
     )
     st.write(risposta)
+
