@@ -10,7 +10,7 @@ st.set_page_config(page_title="Chatbot scolastico", page_icon="📚")
 st.title("📚 Chatbot scolastico con PDF")
 
 # Carica PDF
-loader = PyPDFLoader("documenti/regolamento.pdf")
+loader = PyPDFLoader("documenti/PTOF-2425.pdf")
 docs = loader.load()
 
 # Dividi il testo in pezzi
@@ -32,4 +32,5 @@ if query:
         f"Rispondi alla domanda basandoti solo su questo documento:\n\n{docs_retrieved}\n\nDomanda: {query}"
     )
     st.write(risposta)
+
 
